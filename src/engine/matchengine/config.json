@@ -1,0 +1,104 @@
+{
+    "debug": true,
+    "process": {
+        "file_limit": 1000,
+        "core_limit": 10000
+    },
+    "log": {
+        "path": "./logs/matchengine",
+        "flag": "fatal,error,warn,info,debug,trace",
+        "num": 10
+    },
+    "alert": {
+        "host": "matchengine",
+        "addr": "127.0.0.1:4444"
+    },
+    "svr": {
+        "bind": [
+            "tcp@0.0.0.0:8316",
+            "udp@0.0.0.0:8316"
+        ],
+        "buf_limit": 100,
+        "max_pkg_size": 10240,
+        "heartbeat_check": false
+    },
+    "cli": "tcp@127.0.0.1:8317",
+    "db_log": {
+        "host": "127.0.0.1",
+        "user": "root",
+        "pass": "",
+        "name": "omx"
+    },
+    "db_history": {
+        "host": "127.0.0.1",
+        "user": "root",
+        "pass": "",
+        "name": "omx"
+    },
+    "assets": [
+        {
+            "name": "ETH",
+            "prec_save": 20,
+            "prec_show": 8
+        }, 
+        {
+            "name": "DAI",
+            "prec_save": 20,
+            "prec_show": 8
+        }, 
+        {
+            "name": "USDT",
+            "prec_save": 20,
+            "prec_show": 8
+        }, 
+        {
+            "name": "USDc",
+            "prec_save": 20,
+            "prec_show": 8
+        }, 
+        {
+            "name": "BTC",
+            "prec_save": 12,
+            "prec_show": 8
+        }, 
+        {
+            "name": "BTCXETF",
+            "prec_save": 12,
+            "prec_show": 8
+        },
+        {
+            "name": "RSTFND",
+            "prec_save": 12,
+            "prec_show": 8
+        }
+    ],
+    "markets": [
+        {
+            "name": "BTCXETF-USDc",
+            "stock": {
+                "name": "BTCXETF",
+                "prec": 5
+            },
+            "money": {
+                "name": "USDc",
+                "prec": 5
+            },
+            "min_amount": "0.001"
+        },
+        {
+            "name": "RSTFND-DAI",
+            "stock": {
+                "name": "RSTFND",
+                "prec": 5
+            },
+            "money": {
+                "name": "DAI",
+                "prec": 5
+            },
+            "min_amount": "0.001"
+        }
+    ],
+    "brokers": "127.0.0.1:9092",
+    "slice_interval": 3600,
+    "slice_keeptime": 259200 
+}
